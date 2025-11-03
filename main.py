@@ -7,6 +7,8 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     #INFINITE LOOP
+    clock = pygame.time.Clock()
+    dt = 0
     while True:
         # Handle events (so the window can close properly)
         for event in pygame.event.get():
@@ -19,6 +21,6 @@ def main():
 
         # Refresh the screen (must come last)
         pygame.display.flip()
-
+        dt = clock.tick(60) / 1000
 if __name__ == "__main__":
     main()
