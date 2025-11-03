@@ -22,6 +22,7 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+        player.update(dt)
         # Fill the screen with black
         screen.fill((0, 0, 0))
         # Draw Player sprite
