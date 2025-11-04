@@ -41,6 +41,14 @@ def main():
                     shot.kill()
                     asteroid.split()
 
+        asteroids_list = list(asteroids)
+        for i in range(len(asteroids_list)):
+            for j in range(i + 1, len(asteroids_list)):
+                a1 = asteroids_list[i]
+                a2 = asteroids_list[j]
+                if a1.collides_with(a2):
+                    a1.bounce(a2)
+
         for asteroid in asteroids:
             if asteroid.collides_with(player):
                 print("Game over!")
